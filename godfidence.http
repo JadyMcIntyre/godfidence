@@ -1,6 +1,0 @@
-@godfidence_HostAddress = http://localhost:5015
-
-GET {{godfidence_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

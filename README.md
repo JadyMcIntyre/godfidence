@@ -1,3 +1,0 @@
-# godfidence
- an api for bible related stuff.
- #testingsting...
