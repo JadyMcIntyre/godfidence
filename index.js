@@ -1,15 +1,12 @@
 const app = require('express')();
+const mentorRoutes = require('routes/mentor/mentor_routes.js');
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
 
-app.get('/user', (req, res) => {
-    res.status(200).send({
-        id: 1,
-        user: 'Jady'
-    })
+app.get('/', (req, res) => {
+    res.status(200).send('Godfidence API');
 });
 
-app.listen(
-    PORT,
-    () => console.log(`it's alive on: http://localhost:${PORT}`)
-);
+app.use('/mentors', mentorRoutes);
+
+app.listen(PORT, () => console.log(`it's alive on: http://localhost:${PORT}`));
