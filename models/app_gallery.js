@@ -1,5 +1,5 @@
 // mentorModel.js
-class App {
+class AppGallery {
     constructor(id, name) {
         this.id = id;
         this.name = name;
@@ -8,13 +8,13 @@ class App {
 
 
 const apps = [
-    new App(1, 'You Version'),
-    new App(2, 'MessengerX'),
-    new App(2, 'Got Questions?'),
-    new App(2, '412 Teens')
+    new AppGallery(1, 'You Version'),
+    new AppGallery(2, 'MessengerX'),
+    new AppGallery(2, 'Got Questions?'),
+    new AppGallery(2, '412 Teens')
 ];
 
 module.exports = {
-    App,
+    AppGallery,
     apps
 };
