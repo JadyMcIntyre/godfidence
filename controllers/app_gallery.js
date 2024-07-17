@@ -1,7 +1,7 @@
 // controllers/mentorController.js
 const { apps } = require('../models/app_gallery');
 
-exports.getAllAppGalleryItemById = (req, res) => {
+exports.getAppGalleryItemById = (req, res) => {
     const appId = parseInt(req.params.id, 10);
     const app = apps.find(m => m.id === appId);
 
