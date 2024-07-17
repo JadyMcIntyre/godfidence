@@ -1,5 +1,5 @@
 // controllers/mentorController.js
-const { mentors } = require('../models/mentor');
+const { mentors } = require('../models/mentor_model');
 
 exports.getMentorById = (req, res) => {
     const mentorId = parseInt(req.params.id, 10);
