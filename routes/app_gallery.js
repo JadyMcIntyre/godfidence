@@ -5,7 +5,7 @@ const router = express.Router();
 
 const appController = require('../controllers/app_gallery');
 
-router.get('/', appController.getAllApps);
-router.get('/:id', appController.getAppById);
+router.get('/', appController.getAllAppGalleryItems);
+router.get('/:id', appController.getAllAppGalleryItemById);
 
 module.exports = router;
