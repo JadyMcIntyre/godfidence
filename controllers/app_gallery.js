@@ -1,5 +1,5 @@
 // controllers/mentorController.js
-const { apps } = require('../models/app');
+const { apps } = require('../models/app_gallery');
 
 exports.getAppById = (req, res) => {
     const appId = parseInt(req.params.id, 10);

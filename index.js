@@ -1,6 +1,6 @@
 const express = require('express');
 const mentorRoutes = require('./routes/mentor');
-const appRoutes = require('./routes/app');
+const appRoutes = require('./routes/app_gallery');
 
 const app = express();
 
