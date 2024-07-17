@@ -3,9 +3,9 @@ const express = require('express');
 
 const router = express.Router();
 
-const appGalleryController = require('../controllers/app_gallery');
+const getAppGalleryController = require('../controllers/get_app_gallery_controller');
 
-router.get('/', appGalleryController.getAllAppGalleryItems);
-router.get('/:id', appGalleryController.getAppGalleryItemById);
+router.get('/', getAppGalleryController.getAllAppGalleryItems);
+router.get('/:id', getAppGalleryController.getAppGalleryItemById);
 
 module.exports = router;
