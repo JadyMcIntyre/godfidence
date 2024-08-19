@@ -10,8 +10,10 @@ class MentorModel {
 
 
 const mentors = [
-    new MentorModel(1, 'Ivan Orellana', 'Drug Addiction', 'Saved after 20 years as an addict.'),
-    new MentorModel(2, 'Jady McIntyre', 'Drug Addiction', 'Saved after 4 years as an addict.')
+    new MentorModel(1, 'John Doe', 'Drug Addiction', 'Saved after 20 years as an addict.'),
+    new MentorModel(2, 'Peter Griffin', 'Terminal illness', 'Saved after 4 years as an addict.'),
+    new MentorModel(3, 'This is a long name test', 'Grief', 'Saved after 20 years as an addict.'),
+    new MentorModel(4, 'Jacob Bacoj', 'this is a test to see what happens', 'Saved after 4 years as an addict.')
 ];
 
 module.exports = {
