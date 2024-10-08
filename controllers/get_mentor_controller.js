@@ -1,7 +1,14 @@
 // Importing the 'mentors' data from the mentor_model file
 const { mentors } = require('../models/mentor_model');
 
-// Controller function to get a specific mentor by ID
+/**
+ * Controller function to get a specific mentor by ID.
+ * 
+ * @param {Object} req - The request object.
+ * @param {Object} req.params - The request parameters.
+ * @param {string} req.params.id - The ID of the mentor.
+ * @param {Object} res - The response object.
+ */
 exports.getMentorById = (req, res) => {
     try {
         // Parse the ID from the request parameters as an integer
@@ -23,7 +30,12 @@ exports.getMentorById = (req, res) => {
     }
 };
 
-// Controller function to get all mentors
+/**
+ * Controller function to get all mentors.
+ * 
+ * @param {Object} req - The request object.
+ * @param {Object} res - The response object.
+ */
 exports.getAllMentors = (req, res) => {
     try {
         // Send the entire list of mentors with a 200 status code
