@@ -2,7 +2,10 @@
  * Main server file for the application.
  */
 
-// Import Express
+// Import dotenv to load environment variables
+require('dotenv').config();
+
+// Import Express and other dependencies
 const express = require('express');
 const mongoose = require('./config/database');
 const User = require('./user_schema');
@@ -10,6 +13,7 @@ const User = require('./user_schema');
 // Import route modules
 const mentorRoutes = require('./routes/mentor_routes');
 const appRoutes = require('./routes/app_gallery_routes');
+const userRoutes = require('./routes/user_routes');
 
 // Create an Express application
 const app = express();
