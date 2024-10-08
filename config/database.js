@@ -13,4 +13,6 @@ const uri = process.env.USE_ATLAS === 'true' ? process.env.MONGODB_URI_ATLAS : p
 mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Connection error', err));
+
+  module.exports = mongoose;
   

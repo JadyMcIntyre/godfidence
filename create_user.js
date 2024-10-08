@@ -1,3 +1,5 @@
+const User = require('./user_schema');
+
 app.post('/users', async (req, res) => {
     try {
       const user = new User(req.body);

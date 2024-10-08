@@ -1,3 +1,5 @@
+const User = require('./user_schema');
+
 app.get('/users', async (req, res) => {
     try {
       const users = await User.find();
