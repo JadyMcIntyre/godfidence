@@ -7,7 +7,7 @@ const express = require('express');
 
 // Import route modules
 const mentorRoutes = require('./routes/mentor_routes');
-const appRoutes = require('./routes/app_gallery');
+const appRoutes = require('./routes/app_gallery_routes');
 
 // Create an Express application
 const app = express();
