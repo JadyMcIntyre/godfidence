@@ -8,7 +8,6 @@ require('dotenv').config();
 // Import Express and other dependencies
 const express = require('express');
 const db = require('./config/database');
-const User = require('./user_schema');
 
 // Import route modules
 const mentorRoutes = require('./routes/mentor_routes');
