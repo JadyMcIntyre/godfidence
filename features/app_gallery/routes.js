@@ -4,11 +4,11 @@ const express = require('express');
 // Create a new router instance
 const router = express.Router();
 
-// Import the mentor controller functions
-const getMentorController = require('../controllers/mentor_controller');
+// Import the app gallery controller functions
+const getAppGalleryController = require('./controller');
 
 /**
- * Route to get all mentors.
+ * Route to get all app gallery items.
  * 
  * @name GET /
  * @function
@@ -17,10 +17,10 @@ const getMentorController = require('../controllers/mentor_controller');
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  */
-router.get('/', getMentorController.getAllMentors);
+router.get('/', getAppGalleryController.getAllAppGalleryItems);
 
 /**
- * Route to get a specific mentor by ID.
+ * Route to get a specific app gallery item by ID.
  * 
  * @name GET /:id
  * @function
@@ -29,7 +29,7 @@ router.get('/', getMentorController.getAllMentors);
  * @param {Object} req - The request object.
  * @param {Object} res - The response object.
  */
-router.get('/:id', getMentorController.getMentorById);
+router.get('/:id', getAppGalleryController.getAppGalleryItemById);
 
 // Export the router module
 module.exports = router;
