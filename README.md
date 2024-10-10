@@ -49,12 +49,23 @@ The Godfidence API supports the following key features for the Godsufficient app
    npm install
    ```
 
-4. Start the development server:
+4. Create a `.env` file in the root directory with the following content:
+   ```
+   MONGODB_URI_LOCAL=mongodb://localhost:27017/your_local_db_name
+   MONGODB_URI_ATLAS=your_mongodb_atlas_connection_string
+   USE_ATLAS=true_or_false
+
+   PORT=your_preferred_port
+   DB_PORT=your_preferred_db_port
+   ```
+   Replace the placeholders with your actual MongoDB connection strings and preferred port numbers.
+
+5. Start the development server:
    ```
    npm run dev
    ```
 
-The API should now be running on `http://localhost:8080`.
+The API should now be running on `http://localhost:YOUR_PORT`, where YOUR_PORT is the port number you specified in the .env file.
 
 ## API Endpoints
 
