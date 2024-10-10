@@ -7,7 +7,7 @@ require('dotenv').config();
 
 // Import Express and other dependencies
 const express = require('express');
-const mongoose = require('./config/database');
+const db = require('./config/database');
 const User = require('./user_schema');
 
 // Import route modules
@@ -45,13 +45,13 @@ app.use('/app', appRoutes);
 app.use('/users', userRoutes)
 
 // Start the server
-mongoose.connection.once('open', () => {
+db.connection.once('open', () => {
     console.log('Connected to MongoDB');
     app.listen(5051, () => console.log(process.env.USE_ATLAS === 'true' ? 'Mongo DB running on Atlas' : `Mongo running on http://localhost:${5051}`));
   });
   
   // Handle database connection errors
-  mongoose.connection.on('error', (err) => {
+  db.connection.on('error', (err) => {
     console.error('MongoDB connection error:', err);
   });
 
