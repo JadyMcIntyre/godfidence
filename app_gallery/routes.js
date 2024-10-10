@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 // Import the app gallery controller functions
-const getAppGalleryController = require('../controllers/app_gallery_controller');
+const getAppGalleryController = require('./controller');
 
 /**
  * Route to get all app gallery items.

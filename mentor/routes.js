@@ -5,7 +5,7 @@ const express = require('express');
 const router = express.Router();
 
 // Import the mentor controller functions
-const getMentorController = require('../mentor/controller');
+const getMentorController = require('./controller');
 
 /**
  * Route to get all mentors.

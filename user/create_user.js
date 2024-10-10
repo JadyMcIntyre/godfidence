@@ -1,4 +1,4 @@
-const User = require('../user_schema');
+const User = require('./user_schema');
 
 app.post('/users', async (req, res) => {
     try {

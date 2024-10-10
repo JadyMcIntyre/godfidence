@@ -1,5 +1,5 @@
 // Importing the 'apps' data from the app_gallery_model file
-const { apps } = require('../models/app_gallery_model');
+const { apps } = require('./model');
 
 /**
  * Controller function to get a specific app gallery item by ID.

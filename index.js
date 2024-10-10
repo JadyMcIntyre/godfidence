@@ -10,9 +10,9 @@ const express = require('express');
 const db = require('./config/database');
 
 // Import route modules
-const mentorRoutes = require('./mentor/routes');
-const appRoutes = require('./app_gallery/routes');
-const userRoutes = require('./user/user_routes');
+const mentorRoutes = require('./features/mentor/routes');
+const appRoutes = require('./features/app_gallery/routes');
+const userRoutes = require('./features/user/user_routes');
 
 // Define the port for the server to listen on and for MongoDB
 const PORT = process.env.PORT;
