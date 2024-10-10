@@ -21,7 +21,8 @@ const app = express();
 app.use(express.json());
 
 // Define the port for the server to listen on
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
+const DBPORT = process.env.DBPORT;
 
 /**
  * Use mentor routes for any requests to /mentor.
@@ -46,7 +47,7 @@ app.use('/users', userRoutes)
 // Start the server
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
-    app.listen(5051, () => console.log(`Mongo running on http://localhost:${5051}`));
+    app.listen(5051, () => console.log(process.env.USE_ATLAS === 'true' ? 'Mongo DB running on Atlas' : `Mongo running on http://localhost:${5051}`));
   });
   
   // Handle database connection errors
