@@ -10,7 +10,7 @@ const uri = process.env.USE_ATLAS === 'true' ? process.env.MONGODB_URI_ATLAS : p
  * 
  * Uses the provided URI and connects with options to avoid deprecation warnings.
  */
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri)
   .then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('Connection error', err));
 

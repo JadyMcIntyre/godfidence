@@ -46,7 +46,7 @@ app.use('/users', userRoutes)
 // Start the server
 mongoose.connection.once('open', () => {
     console.log('Connected to MongoDB');
-    app.listen(5051, () => console.log(`Server running on http://localhost:${PORT}`));
+    app.listen(5051, () => console.log(`Mongo running on http://localhost:${5051}`));
   });
   
   // Handle database connection errors
