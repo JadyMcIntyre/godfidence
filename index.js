@@ -15,14 +15,14 @@ const mentorRoutes = require('./routes/mentor_routes');
 const appRoutes = require('./routes/app_gallery_routes');
 const userRoutes = require('./routes/user_routes');
 
+// Define the port for the server to listen on and for MongoDB
+const PORT = process.env.PORT;
+const DB_PORT = process.env.DB_PORT;
+
 // Create an Express application
 const app = express();
 
 app.use(express.json());
-
-// Define the port for the server to listen on
-const PORT = process.env.PORT;
-const DBPORT = process.env.DBPORT;
 
 /**
  * Use mentor routes for any requests to /mentor.
@@ -47,7 +47,7 @@ app.use('/users', userRoutes)
 // Start the server
 db.connection.once('open', () => {
     console.log('Connected to MongoDB');
-    app.listen(5051, () => console.log(process.env.USE_ATLAS === 'true' ? 'Mongo DB running on Atlas' : `Mongo running on http://localhost:${5051}`));
+    app.listen(DB_PORT, () => console.log(process.env.USE_ATLAS === 'true' ? 'Mongo DB running on Atlas' : `Mongo running on http://localhost:${DB_PORT}`));
   });
   
   // Handle database connection errors
