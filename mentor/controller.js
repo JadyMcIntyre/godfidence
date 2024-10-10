@@ -1,5 +1,5 @@
 // Importing the 'mentors' data from the mentor_model file
-const { mentors } = require('../models/mentor_model');
+const { mentors } = require('./model');
 
 /**
  * Controller function to get a specific mentor by ID.
