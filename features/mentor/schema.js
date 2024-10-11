@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 
 const mentorschema = new mongoose.Schema({
-    //update
+    id: Number,
+    name: String,
+    expertise: String,
+    description: String
   });
   
   const Mentor = mongoose.model('Mentor', mentorschema);
