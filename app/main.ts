@@ -1,12 +1,32 @@
-// currently very basic oak api
-import { Application } from "https://deno.land/x/oak@v17.1.1/mod.ts";
-import { indexRoutes } from "./features/index/routes.ts";
+import { addTodo, deleteTodo, getIncompleteTodos, getTodo, getTodos, updateTodo } from "./todoController.ts";
 
-const API_PORT = Number(Deno.env.get("API_PORT"));
+const PORT = Number(Deno.env.get("API_PORT"));
 
-const app = new Application();
+async function handler(req: Request): Promise<Response> {
+  const url = new URL(req.url);
+  const path = url.pathname;
 
-app.use(indexRoutes().routes()); // Call indexRoutes and get routes
-app.use(indexRoutes().allowedMethods()); // Include allowedMethods
+  if (req.method === "GET" && path === "/") {
+    return new Response("Hello, World!");
+  } else if (req.method === "POST" && path === "/api/todos") {
+    return await addTodo(req);
+  } else if (req.method === "GET" && path === "/api/todos") {
+    return await getTodos();
+  } else if (req.method === "GET" && path === "/api/todos/incomplete/count") {
+    return await getIncompleteTodos();
+  } else if (req.method === "GET" && path.startsWith("/api/todos/")) {
+    const id  = path.split('/')[3];
+    return await getTodo(id);
+  } else if (req.method === "PUT" && path.startsWith("/api/todos/")) {
+    const id  = path.split('/')[3];
+    return await updateTodo(id, req);
+  } else if (req.method === "DELETE" && path.startsWith("/api/todos/")) {
+    const id  = path.split('/')[3];
+    return await deleteTodo(id);
+  } else {
+    return new Response("Not Found", { status: 404 });
+  }
+}
 
-await app.listen({ port: API_PORT });
+console.log(`HTTP webserver running. Access it at: http://localhost:${PORT}/`);
+Deno.serve({ port: PORT }, handler);
