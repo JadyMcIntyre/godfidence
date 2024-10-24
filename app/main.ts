@@ -1,14 +1,11 @@
-import { Application, Router } from "https://deno.land/x/oak/mod.ts";
+import { Application } from "https://deno.land/x/oak@v17.1.1/mod.ts";
+import { indexRoutes } from "./features/index/routes.ts";
 
-const API_PORT =  Number(Deno.env.get("API_PORT"));
+const API_PORT = Number(Deno.env.get("API_PORT"));
 
 const app = new Application();
-const router = new Router();
 
-router.get("/", (context) => {
-  context.response.body = "Hello, World!";
-});
+app.use(indexRoutes().routes()); // Call indexRoutes and get routes
+app.use(indexRoutes().allowedMethods()); // Include allowedMethods
 
-app.use(router.routes());
-
-await app.listen({ port: API_PORT});
+await app.listen({ port: API_PORT });
