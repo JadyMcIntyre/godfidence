@@ -98,21 +98,28 @@ async function deleteTodo(id: string): Promise<Response> {
 
 async function getIncompleteTodos(): Promise<Response> {
     try {
-      const pipeline = [
-        { $match: { complete: false } },
-        { $count: "incomplete" },
-      ];
-      const result = await todos.aggregate(pipeline).toArray();
-      const incompleteCount = result[0]?.incomplete || 0;
-      return new Response(JSON.stringify({ incompleteCount }), {
-        headers: { "Content-Type": "application/json" },
-      });
+        const pipeline = [
+            { $match: { complete: false } },
+            { $count: "incomplete" },
+        ];
+        const result = await todos.aggregate(pipeline).toArray();
+        const incompleteCount = result[0]?.incomplete || 0;
+        return new Response(JSON.stringify({ incompleteCount }), {
+            headers: { "Content-Type": "application/json" },
+        });
     } catch (error: any) {
-      return new Response(JSON.stringify({ error: error.message }), {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      });
+        return new Response(JSON.stringify({ error: error.message }), {
+            status: 500,
+            headers: { "Content-Type": "application/json" },
+        });
     }
-  }
+}
 
-  export { addTodo, deleteTodo, getIncompleteTodos, getTodo, getTodos, updateTodo };
+export {
+    addTodo,
+    deleteTodo,
+    getIncompleteTodos,
+    getTodo,
+    getTodos,
+    updateTodo,
+};

@@ -1,8 +1,6 @@
 import { MongoClient } from "npm:mongodb@5.6.0";
 
-const MONGODB_URI = Deno.env.get("USE_ATLAS")
-    ? Deno.env.get("MONGODB_URI_ATLAS")
-    : Deno.env.get("MONGODB_URI_LOCAL") || "";
+const MONGODB_URI = Deno.env.get("MONGODB_URI_ATLAS") || "";
 const DB_NAME = Deno.env.get("DB_NAME") || "todo_db";
 
 if (!MONGODB_URI) {
